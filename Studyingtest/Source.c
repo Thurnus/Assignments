@@ -9,7 +9,8 @@ int main() {
 	//priklad4(); //explicitni pretypovani
 	//priklad5(); //podminka existence reseni v oboru R
 	//priklad6(); //hledani korenu
-	//priklad7();
+	//priklad7(); //bodovany ukol
+	priklad8(); //
 }
 
 int priklad1() {
@@ -122,5 +123,5 @@ int priklad7() {
 			printf("\nCislo %d neni delitelne 2 ani 3.",a);
 		}
 	}
-
 }
+
