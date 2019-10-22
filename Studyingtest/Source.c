@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 #define PI 3.14
 
 int main() {
@@ -10,7 +11,9 @@ int main() {
 	//priklad5(); //podminka existence reseni v oboru R
 	//priklad6(); //hledani korenu
 	//priklad7(); //bodovany ukol
-	priklad8(); //
+	//priklad8(); //znamka
+	//priklad9(); //zjisteni charu
+	priklad10();
 }
 
 int priklad1() {
@@ -125,3 +128,92 @@ int priklad7() {
 	}
 }
 
+int priklad8()
+{
+	int body;
+	char znamka;
+	printf("Zadejte pocet bodu: ");
+	int sfc = scanf("%d", &body);
+	if (body > 100 || body < 0) {
+		printf("Zadan neplatny pocet bodu.\n");
+	}
+	else {
+		if (body <= 100 && body >= 90) {
+			znamka = 'A';
+		}
+
+		if (body < 90 && body >= 80) {
+			znamka = 'B';
+		}
+
+		if (body < 80 && body >= 76) {
+			znamka = 'C';
+		}
+
+		if (body < 76 && body >= 71) {
+			znamka = 'D';
+		}
+
+		if (body <71 && body >= 60) {
+			znamka = 'E';
+		}
+
+		if (body < 60 && body >= 0) {
+			znamka = 'F';
+		}
+		printf("Znamka je %c\n", znamka);
+	}
+	
+	return 0;
+}
+
+int priklad9()
+{
+	char znak;
+	printf("Zadejte znak: ");
+	scanf("%c", &znak);
+
+	if (znak >= 'A' && znak <= 'Z') {
+		printf("velke pismeno %c\n", znak);
+	} else if (znak >= 'a' && znak <= 'z') {
+		printf("male pismeno %c\n", znak);
+	}
+	else if (znak >= '0' && znak <= '9') {
+		printf("cislice %c\n", znak);
+	}
+	else if (znak == '!')  {
+		printf("vykricnik\n");
+	}
+	else if (znak == '?') {
+		printf("otaznik\n");
+	}
+	else if (znak == '*') {
+		printf("hvezdicka\n");
+	}
+	else if (znak == '@') {
+		printf("zavinac\n");
+	}
+	else if (znak == '#') {
+		printf("krizek\n");
+	}
+	else if (znak == '^') {
+		printf("striska\n");
+	}
+	else printf("jiny znak\n");
+}
+
+int priklad10()
+{
+	printf("Prvocisla: ");
+	for (int i = 0; i < 100; i++) {
+		int count = 0;
+
+		for (int a = 1; a <= i; a++) {
+			if (i % a == 0) count++;
+		}
+		
+		if (count == 2) {
+			printf("%d ", i);
+		}
+	}
+}
